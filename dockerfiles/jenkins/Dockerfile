@@ -4,7 +4,7 @@ MAINTAINER juergen.seliger@gmail.com
 # if we want to install via apt
 USER root
 
-ENV VERSION 1.4.0
+ENV VERSION 2.0.0.0b2
 
 RUN apk add --no-cache python
 RUN apk add --no-cache py-pip
