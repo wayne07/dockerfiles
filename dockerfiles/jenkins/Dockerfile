@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.79-alpine
+FROM jenkins/jenkins:2.112-alpine
 MAINTAINER juergen.seliger@gmail.com
 
 # if we want to install via apt
@@ -9,7 +9,7 @@ RUN /usr/local/bin/install-plugins.sh pipeline-stage-view handlebars workflow-du
 
 
 ## jenkins-job-builder
-ENV VERSION 2.0.0.0b2
+ENV VERSION 2.0.3
 
 RUN apk add --no-cache python
 RUN apk add --no-cache py-pip
