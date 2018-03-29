@@ -13,6 +13,7 @@ ENV VERSION 2.0.3
 
 RUN apk add --no-cache python
 RUN apk add --no-cache py-pip
+RUN pip install --upgrade pip
 RUN pip install jenkins-job-builder==${VERSION}
 
 
