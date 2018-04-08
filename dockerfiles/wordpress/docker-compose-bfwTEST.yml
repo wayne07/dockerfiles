@@ -1,0 +1,45 @@
+version: '2.0'
+#
+# look at: https://docs.docker.com/compose/wordpress/
+#          https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-and-phpmyadmin-with-docker-compose-on-ubuntu-14-04
+#
+services:
+  dbBfW:
+   container_name: wp-database-test-bfwTEST
+   image: mysql:5.7
+   volumes:
+     - /home/juergen/dev/docker/volumes/wp-database-bfwTEST:/var/lib/mysql
+   restart: always
+   environment:
+     MYSQL_ROOT_PASSWORD: somewordpress
+     MYSQL_DATABASE: wordpress
+     MYSQL_USER: wordpress
+     MYSQL_PASSWORD: wordpress
+
+  phpmyadminBfW:
+    container_name: wp-phpmyadmin-bfwTEST
+    image: phpmyadmin/phpmyadmin:4.7
+    links:
+      - dbBfW:mysql
+    ports:
+      - 8383:80
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: somewordpress
+
+  wordpressBfW:
+   container_name: wordpress-test-bfwTEST
+   depends_on:
+     - dbBfW
+     - phpmyadminBfW
+   image: wordpress:4.9.4-php7.2-apache
+   volumes:
+         - /home/juergen/dev/docker/volumes/wp-files-bfwTEST:/var/www/html
+   ports:
+     - 9090:80
+   restart: always
+   environment:
+     WORDPRESS_DB_HOST: dbBfW:3306
+     WORDPRESS_DB_USER: wordpress
+     WORDPRESS_DB_PASSWORD: wordpress
+
