@@ -5,10 +5,10 @@ version: '2.0'
 #
 services:
   db:
-   container_name: wp-database-test
+   container_name: wp-database-test-ursula
    image: mysql:5.7
    volumes:
-     - /home/juergen/dev/docker/volumes/wp-database:/var/lib/mysql
+     - /home/juergen/dev/docker/volumes/wp-database-ursula:/var/lib/mysql
    restart: always
    environment:
      MYSQL_ROOT_PASSWORD: somewordpress
@@ -17,7 +17,7 @@ services:
      MYSQL_PASSWORD: wordpress
 
   phpmyadmin:
-    container_name: wp-phpmyadmin
+    container_name: wp-phpmyadmin-ursula
     image: phpmyadmin/phpmyadmin:4.7
     links:
       - db:mysql
@@ -28,13 +28,13 @@ services:
       MYSQL_ROOT_PASSWORD: somewordpress
 
   wordpress:
-   container_name: wordpress-test
+   container_name: wordpress-test-ursula
    depends_on:
      - db
      - phpmyadmin
    image: wordpress:4.9.1-php7.0-apache
    volumes:
-         - /home/juergen/dev/docker/volumes/wp-files:/var/www/html
+         - /home/juergen/dev/docker/volumes/wp-files-ursula:/var/www/html
    ports:
      - "8000:80"
    restart: always
