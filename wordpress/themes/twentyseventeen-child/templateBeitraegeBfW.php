@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: templateBfW.php
+* Template Name: templateBeitraegeBfW.php
 *
 *
 * @package Twenty_Seventeen
@@ -31,7 +31,7 @@ get_header(); ?>
 **/
         <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(
-            'category_name' => 'Ortschaftsrat',
+            'category_name' => 'Ortschaftsrat,Bürgertreff',
             'paged' => $paged,
             'posts_per_page' => 5
         );
