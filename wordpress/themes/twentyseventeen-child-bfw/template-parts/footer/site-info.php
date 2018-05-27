@@ -10,17 +10,18 @@
 
 ?>
 <div class="site-info">
-    <a href="http://bürger-für-wettersbach.de" >Startseite</a>
+    <a href="<?php echo site_url();?>"> Startseite</a>
     <span role="separator" aria-hidden="true"></span>
+
     <?php
     if ( function_exists( 'the_privacy_policy_link' ) ) {
         the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
     }
     ?>
-    <a href="http://bürger-für-wettersbach.de/impressum/" >Impressum</a>
+
+    <a href="<?php echo site_url( '/impressum/');?>"> Impressum</a>
     <span role="separator" aria-hidden="true"></span>
-    <a href="http://bürger-für-wettersbach.de/kontakt/" >Kontakt</a>
-<!--    <a href="--><?php //echo esc_url( __( 'https://wordpress.org/', 'twentyseventeen' ) ); ?><!--" class="imprint">-->
-<!--        --><?php //printf( __( 'Proudly powered by %s', 'twentyseventeen' ), 'WordPress' ); ?>
-<!--    </a>    -->
+
+    <a href="<?php echo site_url( '/kontakt/');?>" > Kontakt</a>
+
 </div><!-- .site-info -->
