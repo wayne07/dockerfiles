@@ -12,7 +12,8 @@ Schritte:
 - Datensicherung in Verzeichnis wp-files entpacken
 - Container für DB und PHP-MyAdmin hochfahren
 - URL http://localhost:8282 öffnen und mit root anmelden
-- SQL Datei aus entpackter Datensicherung importieren
+- SQL Datei aus entpackter Datensicherung importieren:
+        Datenbank "wordpress" auswählen und über den Reiter "Importieren" das SQL-Script aus dem Backup auswählen
 - SQL lt Datei anpassungen.sql über PHP-MyAdmin einspielen
 - Container für Wordpress hochfahren
 - URL http://localhost:9000/ öffnen
