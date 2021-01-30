@@ -5,7 +5,7 @@
  * @package WordPress
  * @subpackage Twenty_Seventeen
  * @since 1.0
- * @version 1.0
+ * @version 1.1
  */
 
 ?>
@@ -22,6 +22,6 @@
     <a href="<?php echo site_url( '/impressum/');?>"> Impressum</a>
     <span role="separator" aria-hidden="true"></span>
 
-    <a href="<?php echo site_url( '/kontakt/');?>" > Kontakt</a>
+    <a href="<?php echo site_url( '/kontakt/so-erreichen-sie-uns/');?>" > Kontakt</a>
 
 </div><!-- .site-info -->
